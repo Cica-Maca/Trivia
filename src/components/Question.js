@@ -1,4 +1,4 @@
-export default function Question() {
+export default function Question(props) {
   return (
     <div className='question-content'>
       <h1>What is your favourite food?</h1>

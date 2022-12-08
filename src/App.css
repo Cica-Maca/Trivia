@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -60,6 +64,7 @@ body {
 .question-content > h1 {
   font-size: 5rem;
   color: #dcedc1;
+  text-decoration: underline;
 }
 
 .question-answers {
@@ -79,4 +84,13 @@ body {
 
 .question-answers > button:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  .question-answers > button {
+    padding: 10px;
+  }
+  .question-content {
+    flex-direction: column;
+  }
 }
