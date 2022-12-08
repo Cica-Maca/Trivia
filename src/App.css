@@ -3,8 +3,11 @@ html {
 }
 
 body {
+  margin: 0;
   height: 100%;
   font-family: 'Inter', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .starting-page {
@@ -38,4 +41,42 @@ body {
 .starting-page > h1 {
   font-size: 3.5rem;
   color: #dcedc1;
+}
+
+.question-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background: rgb(33, 147, 176);
+  background: linear-gradient(
+    90deg,
+    rgba(33, 147, 176, 1) 0%,
+    rgba(109, 213, 237, 1) 100%
+  );
+}
+
+.question-content > h1 {
+  font-size: 5rem;
+  color: #dcedc1;
+}
+
+.question-answers {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.question-answers > button {
+  background-color: white;
+  font-size: 3rem;
+  border-radius: 50px;
+  color: rgb(33, 147, 176);
+  padding: 20px 100px 20px 100px;
+}
+
+.question-answers > button:hover {
+  cursor: pointer;
 }

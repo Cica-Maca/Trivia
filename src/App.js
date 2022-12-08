@@ -1,6 +1,7 @@
 import './App.css';
 import Landing from './components/Landing';
-import { useState, useEffect } from 'react';
+import Question from './components/Question';
+import { useState } from 'react';
 
 function App() {
   const [trivia, setTrivia] = useState([]);
@@ -17,10 +18,10 @@ function App() {
 
   return (
     <div className='App'>
-      {trivia.length <= 0 ? (
+      {trivia.length === 0 ? (
         <Landing getNewTrivia={getNewTrivia} />
       ) : (
-        <h1>Trivia</h1>
+        <Question />
       )}
     </div>
   );
