@@ -5,14 +5,15 @@ import { useState } from 'react';
 
 function App() {
   const [trivia, setTrivia] = useState([]);
+  const [currentQuestion, setCurrentQuestion] = useState({});
 
   function getNewTrivia() {
-    fetch('https://opentdb.com/api.php?amount=5')
+    fetch('https://opentdb.com/api.php?amount=5&type=multiple')
       .then((response) => response.json())
       .then((data) => {
         // Error handling
         setTrivia(data.results);
-        console.log(data);
+        setCurrentQuestion(data.results[0]);
       });
   }
 
@@ -21,7 +22,7 @@ function App() {
       {trivia.length === 0 ? (
         <Landing getNewTrivia={getNewTrivia} />
       ) : (
-        <Question />
+        <Question question={currentQuestion} />
       )}
     </div>
   );

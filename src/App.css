@@ -62,6 +62,7 @@ body {
 }
 
 .question-content > h1 {
+  max-width: 30ch;
   font-size: 5rem;
   color: #dcedc1;
   text-decoration: underline;
