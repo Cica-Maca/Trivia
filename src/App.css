@@ -12,21 +12,22 @@ body {
   font-family: 'Inter', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-.starting-page {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   background: rgb(33, 147, 176);
   background: linear-gradient(
     90deg,
     rgba(33, 147, 176, 1) 0%,
     rgba(109, 213, 237, 1) 100%
   );
+}
+
+.starting-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
 }
 
 .starting-page > button {
@@ -53,12 +54,6 @@ body {
   align-items: center;
   text-align: center;
   height: 100vh;
-  background: rgb(33, 147, 176);
-  background: linear-gradient(
-    90deg,
-    rgba(33, 147, 176, 1) 0%,
-    rgba(109, 213, 237, 1) 100%
-  );
 }
 
 .question-content > h1 {
@@ -81,6 +76,8 @@ body {
   border-radius: 50px;
   color: rgb(33, 147, 176);
   padding: 20px 100px 20px 100px;
+  width: 400px;
+  word-wrap: break-word;
 }
 
 .question-answers > button:hover {
@@ -89,6 +86,7 @@ body {
 
 @media only screen and (max-width: 900px) {
   .question-answers > button {
+    width: auto;
     padding: 10px;
   }
   .question-content {
