@@ -1,6 +1,6 @@
 export default function Landing({ getNewTrivia, userAnswers, questions }) {
   const correctAnswers = userAnswers.filter(
-    (answer) => answer.answer === true
+    (answer) => answer.correct === true
   ).length;
   console.log(correctAnswers, userAnswers);
   return (

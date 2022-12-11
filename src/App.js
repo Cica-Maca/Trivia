@@ -21,10 +21,16 @@ function App() {
       });
   }
 
-  function handleAnswer(answer) {
+  function handleAnswer(answer, choices) {
     answer === currentQuestion.correct_answer
-      ? setUserAnswers((prevAnswers) => [...prevAnswers, { answer: true }])
-      : setUserAnswers((prevAnswers) => [...prevAnswers, { answer: false }]);
+      ? setUserAnswers((prevAnswers) => [
+          ...prevAnswers,
+          { choices: choices, answer: answer, correct: true },
+        ])
+      : setUserAnswers((prevAnswers) => [
+          ...prevAnswers,
+          { choices: choices, answer: answer, correct: false },
+        ]);
 
     userAnswers.length < trivia.length - 1
       ? setCurrentQuestion(trivia[userAnswers.length + 1])

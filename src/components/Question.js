@@ -10,7 +10,7 @@ export default function Question({ question, handleAnswer }) {
     <button
       key={choice}
       onClick={() => {
-        handleAnswer(choice);
+        handleAnswer(choice, answers);
       }}
     >
       {choice}
