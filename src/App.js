@@ -1,8 +1,7 @@
 import './App.css';
-import Landing from './components/Landing';
+import Info from './components/Info';
 import Question from './components/Question';
-import Ending from './components/Ending';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
   const [trivia, setTrivia] = useState([]);
@@ -17,6 +16,8 @@ function App() {
         // Error handling
         setTrivia(data.results);
         setCurrentQuestion(data.results[0]);
+        setGameState(false);
+        setUserAnswers([]);
       });
   }
 
@@ -33,7 +34,11 @@ function App() {
   return (
     <div className='App'>
       {trivia.length === 0 || gameState === true ? (
-        <Landing getNewTrivia={getNewTrivia} />
+        <Info
+          getNewTrivia={getNewTrivia}
+          userAnswers={userAnswers}
+          questions={trivia}
+        />
       ) : (
         <Question question={currentQuestion} handleAnswer={handleAnswer} />
       )}
