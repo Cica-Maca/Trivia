@@ -2,6 +2,7 @@ import './App.css';
 import Info from './components/Info';
 import Question from './components/Question';
 import { useState } from 'react';
+import { shuffleArray } from './components/utils';
 
 function App() {
   const [trivia, setTrivia] = useState([]);
@@ -14,9 +15,21 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         // TO DO Error handling
+        const newData = data.results.map((question) => {
+          return {
+            question: question.question,
+            answers: shuffleArray([
+              ...question.incorrect_answers,
+              question.correct_answer,
+            ]),
+            correctAnswer: question.correct_answer,
+          };
+        });
 
-        setTrivia(data.results);
-        setCurrentQuestion(data.results[0]);
+        console.log(newData);
+
+        setTrivia(newData);
+        setCurrentQuestion(newData[0]);
         setGameState(false);
         setUserAnswers([]);
       });
