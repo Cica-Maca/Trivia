@@ -13,7 +13,8 @@ function App() {
     fetch('https://opentdb.com/api.php?amount=5&type=multiple')
       .then((response) => response.json())
       .then((data) => {
-        // Error handling
+        // TO DO Error handling
+
         setTrivia(data.results);
         setCurrentQuestion(data.results[0]);
         setGameState(false);
