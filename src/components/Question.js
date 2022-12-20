@@ -1,16 +1,16 @@
-import { shuffleArray, parseEntities } from './utils';
+import { parseEntities } from './utils';
 
 export default function Question({ question, handleAnswer }) {
   const formatedQuestion = parseEntities(question.question);
 
-  const answersElements = question.answers.map((choice) => (
+  const answersElements = question.answers.map((answer) => (
     <button
-      key={choice}
+      key={answer}
       onClick={() => {
-        handleAnswer(choice, question.answers);
+        handleAnswer(answer);
       }}
     >
-      {choice}
+      {answer}
     </button>
   ));
 

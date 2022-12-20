@@ -35,16 +35,15 @@ function App() {
       });
   }
 
-  function handleAnswer(answer, choices) {
-    answer === currentQuestion.correct_answer
-      ? setUserAnswers((prevAnswers) => [
-          ...prevAnswers,
-          { choices: choices, answer: answer, correct: true },
-        ])
-      : setUserAnswers((prevAnswers) => [
-          ...prevAnswers,
-          { choices: choices, answer: answer, correct: false },
-        ]);
+  function handleAnswer(answer) {
+    setUserAnswers((prevAnswers) => [
+      ...prevAnswers,
+      {
+        answer: answer,
+        correctAnswer: currentQuestion.correctAnswer,
+        correct: answer === currentQuestion.correctAnswer,
+      },
+    ]);
 
     userAnswers.length < trivia.length - 1
       ? setCurrentQuestion(trivia[userAnswers.length + 1])
