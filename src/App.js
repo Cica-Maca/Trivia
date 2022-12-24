@@ -14,7 +14,6 @@ function App() {
     fetch('https://opentdb.com/api.php?amount=5&type=multiple')
       .then((response) => response.json())
       .then((data) => {
-        // TO DO Error handling
         const newData = data.results.map((question) => {
           return {
             question: question.question,
@@ -26,12 +25,13 @@ function App() {
           };
         });
 
-        console.log(newData);
-
+        setUserAnswers([]);
         setTrivia(newData);
         setCurrentQuestion(newData[0]);
         setGameState(false);
-        setUserAnswers([]);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }
 

@@ -10,12 +10,12 @@ export default function Question({ question, handleAnswer }) {
         handleAnswer(answer);
       }}
     >
-      {answer}
+      {parseEntities(answer)}
     </button>
   ));
 
   return (
-    <div className='question-content'>
+    <div className='question-content' key={question.question}>
       <h1>{formatedQuestion}</h1>
       <div className='question-answers'>{answersElements}</div>
     </div>

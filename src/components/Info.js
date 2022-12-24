@@ -1,5 +1,5 @@
 export default function Landing({ getNewTrivia, userAnswers, questions }) {
-  const correctAnswers = userAnswers.filter(
+  const correctAnswersNum = userAnswers.filter(
     (answer) => answer.correct === true
   ).length;
   return (
@@ -8,7 +8,7 @@ export default function Landing({ getNewTrivia, userAnswers, questions }) {
         <h1>Welcome to trivia.</h1>
       ) : (
         <h1>
-          You scored {correctAnswers}/{userAnswers.length} correct answers!
+          You scored {correctAnswersNum}/{userAnswers.length} correct answers!
         </h1>
       )}
       <button onClick={getNewTrivia}>Get trivia questions</button>

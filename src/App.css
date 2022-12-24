@@ -63,6 +63,16 @@ body {
   color: #dcedc1;
 }
 
+.fadeOut {
+  animation: fadeOut;
+  animation-duration: 1s;
+}
+
+.fadeIn {
+  animation: fadeIn;
+  animation-duration: 1s;
+}
+
 .question-content {
   display: flex;
   justify-content: space-around;
