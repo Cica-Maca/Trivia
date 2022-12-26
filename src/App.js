@@ -3,10 +3,11 @@ import Info from './components/Info';
 import Question from './components/Question';
 import { useState } from 'react';
 import { shuffleArray } from './components/utils';
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
 function App() {
   const [trivia, setTrivia] = useState([]);
-  const [currentQuestion, setCurrentQuestion] = useState({});
+  const [currentQuestion, setCurrentQuestion] = useState(null);
   const [userAnswers, setUserAnswers] = useState([]);
   const [gameState, setGameState] = useState(false);
 
@@ -52,15 +53,25 @@ function App() {
 
   return (
     <div className='App'>
-      {trivia.length === 0 || gameState === true ? (
-        <Info
-          getNewTrivia={getNewTrivia}
-          userAnswers={userAnswers}
-          questions={trivia}
-        />
-      ) : (
-        <Question question={currentQuestion} handleAnswer={handleAnswer} />
-      )}
+      <SwitchTransition mode={'out-in'}>
+        {trivia.length === 0 || gameState === true ? (
+          <CSSTransition classNames='fade' key={trivia} timeout={300}>
+            <Info
+              getNewTrivia={getNewTrivia}
+              userAnswers={userAnswers}
+              questions={trivia}
+            />
+          </CSSTransition>
+        ) : (
+          <CSSTransition
+            classNames='fade'
+            key={currentQuestion.question}
+            timeout={300}
+          >
+            <Question question={currentQuestion} handleAnswer={handleAnswer} />
+          </CSSTransition>
+        )}
+      </SwitchTransition>
     </div>
   );
 }
