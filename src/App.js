@@ -53,9 +53,9 @@ function App() {
 
   return (
     <div className='App'>
-      <SwitchTransition mode={'out-in'}>
+      <SwitchTransition>
         {trivia.length === 0 || gameState === true ? (
-          <CSSTransition classNames='fade' key={trivia} timeout={300}>
+          <CSSTransition classNames='slideLeft' key={trivia} timeout={500}>
             <Info
               getNewTrivia={getNewTrivia}
               userAnswers={userAnswers}
@@ -64,9 +64,9 @@ function App() {
           </CSSTransition>
         ) : (
           <CSSTransition
-            classNames='fade'
+            classNames='fadeDown'
             key={currentQuestion.question}
-            timeout={300}
+            timeout={500}
           >
             <Question question={currentQuestion} handleAnswer={handleAnswer} />
           </CSSTransition>

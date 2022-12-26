@@ -119,17 +119,35 @@ body {
   }
 }
 
-.fade-enter {
+.fadeDown-enter {
   opacity: 0;
 }
-.fade-enter-active {
-  opacity: 1;
+.fadeDown-enter-active {
+  animation: fadeInDown;
+  animation-duration: 500ms;
+}
+.fadeDown-exit {
+  animation: fadeOutDown;
+  animation-duration: 500ms;
+}
+.fadeDown-exit-active {
+  opacity: 0;
   transition: opacity 300ms;
 }
-.fade-exit {
-  opacity: 1;
+
+.slideLeft-enter {
+  opacity: 0;
 }
-.fade-exit-active {
+.slideLeft-enter-active {
+  opacity: 1;
+  animation: slideInLeft;
+  animation-duration: 500ms;
+}
+.slideLeft-exit {
+  animation: slideOutLeft;
+  animation-duration: 500ms;
+}
+.slideLeft-exit-active {
   opacity: 0;
   transition: opacity 300ms;
 }
