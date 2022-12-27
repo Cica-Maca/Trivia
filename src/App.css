@@ -111,11 +111,24 @@ body {
 
 @media only screen and (max-width: 900px) {
   .question-answers > button {
-    width: auto;
+    width: 200px;
     padding: 10px;
+    font-size: 2rem;
   }
   .question-content {
     flex-direction: column;
+  }
+
+  .question-content > h1 {
+    font-size: 2.5rem;
+  }
+
+  .question-answers {
+    justify-content: center;
+  }
+
+  .question-answers > button {
+    margin-bottom: 40px;
   }
 }
 
