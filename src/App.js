@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { shuffleArray } from './components/utils';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
+import { parseEntities } from './components/utils';
+
 function App() {
   const [trivia, setTrivia] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(null);
@@ -17,7 +19,7 @@ function App() {
       .then((data) => {
         const newData = data.results.map((question) => {
           return {
-            question: question.question,
+            question: parseEntities(question.question),
             answers: shuffleArray([
               ...question.incorrect_answers,
               question.correct_answer,

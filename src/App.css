@@ -164,3 +164,38 @@ body {
   opacity: 0;
   transition: opacity 300ms;
 }
+
+.question-Rev {
+  align-self: center;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  align-items: start;
+}
+
+.question-Rev > h1 {
+  font-size: 3.5rem;
+  color: #dcedc1;
+  text-decoration: underline;
+}
+
+.answers-Rev {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.answers-Rev > button {
+  background-color: white;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  color: rgb(33, 147, 176);
+  padding: 20px 50px 20px 50px;
+  width: 200px;
+  word-wrap: break-word;
+}
+
+.incorrect-answer {
+  background-color: #ffc0c7;
+}

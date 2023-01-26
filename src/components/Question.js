@@ -1,8 +1,6 @@
 import { parseEntities } from './utils';
 
 export default function Question({ question, handleAnswer }) {
-  const formatedQuestion = parseEntities(question.question);
-
   const answersElements = question.answers.map((answer) => (
     <button
       key={answer}
@@ -16,7 +14,7 @@ export default function Question({ question, handleAnswer }) {
 
   return (
     <div className='question-content' key={question.question}>
-      <h1>{formatedQuestion}</h1>
+      <h1>{question.question}</h1>
       <div className='question-answers'>{answersElements}</div>
     </div>
   );
