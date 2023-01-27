@@ -197,5 +197,9 @@ body {
 }
 
 .incorrect-answer {
-  background-color: #ffc0c7;
+  background-color: #ffc0c7 !important;
+}
+
+.correct-answer {
+  background-color: #c0ffc3 !important;
 }

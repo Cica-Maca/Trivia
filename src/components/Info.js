@@ -9,14 +9,27 @@ export default function Info({ getNewTrivia, userAnswers, questions }) {
       <div className='question-Rev'>
         <h1>{question.question}</h1>
         <div className='answers-Rev'>
-          {question.answers.map((answer) => (
-            <button>{parseEntities(answer)}</button>
-          ))}
+          {question.answers.map((answer) => {
+            const markedCorrectAnswer =
+              answer === question.correctAnswer ? 'correct-answer' : '';
+            const markedUserAnswer =
+              answer === userAnswers[index].answer &&
+              !userAnswers[index].correct
+                ? 'incorrect-answer'
+                : '';
+
+            return (
+              <button className={`${markedCorrectAnswer} ${markedUserAnswer}`}>
+                {parseEntities(answer)}
+              </button>
+            );
+          })}
         </div>
       </div>
     );
   });
 
+  console.log(questions);
   console.log(userAnswers);
   const correctAnswersNum = userAnswers.filter(
     (answer) => answer.correct === true
