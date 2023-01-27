@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { parseEntities } from './utils';
 import QuestionScore from './QuestionScore';
+
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
 export default function Info({ getNewTrivia, userAnswers, questions }) {
   const [toggleAnswers, setToggleAnswers] = useState(false);
@@ -8,6 +9,7 @@ export default function Info({ getNewTrivia, userAnswers, questions }) {
   const revisedQuestionsElements = questions.map((question, index) => {
     return (
       <QuestionScore
+        key={question.question}
         question={question}
         userAnswers={userAnswers}
         index={index}

@@ -10,7 +10,10 @@ export default function QuestionScore({ question, userAnswers, index }) {
         : '';
 
     return (
-      <button className={`${markedCorrectAnswer} ${markedUserAnswer}`}>
+      <button
+        key={answer}
+        className={`${markedCorrectAnswer} ${markedUserAnswer}`}
+      >
         {parseEntities(answer)}
       </button>
     );
