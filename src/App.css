@@ -165,6 +165,23 @@ body {
   transition: opacity 300ms;
 }
 
+.slideRight-enter {
+  opacity: 0;
+}
+.slideRight-enter-active {
+  opacity: 1;
+  animation: slideInRight;
+  animation-duration: 500ms;
+}
+.slideRight-exit {
+  animation: slideOutRight;
+  animation-duration: 500ms;
+}
+.slideRight-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
 .question-Rev {
   align-self: center;
   width: 90%;
@@ -175,7 +192,7 @@ body {
 }
 
 .question-Rev > h1 {
-  font-size: 3.5rem;
+  font-size: 2rem;
   color: #dcedc1;
   text-decoration: underline;
 }
@@ -202,4 +219,8 @@ body {
 
 .correct-answer {
   background-color: #c0ffc3 !important;
+}
+
+.show-button {
+  margin-top: 25px;
 }
