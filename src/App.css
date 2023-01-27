@@ -170,8 +170,8 @@ body {
   width: 90%;
   display: flex;
   flex-direction: column;
-  align-content: start;
-  align-items: start;
+  align-content: flex-start;
+  align-items: flex-start;
 }
 
 .question-Rev > h1 {
