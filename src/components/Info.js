@@ -48,7 +48,7 @@ export default function Info({ getNewTrivia, userAnswers, questions }) {
       {toggleAnswers && revisedQuestionsElements}
       {userAnswers.length > 0 && (
         <button onClick={() => setToggleAnswers((prevState) => !prevState)}>
-          Check your answers
+          {toggleAnswers ? 'Hide Answers' : 'Show Answers'}
         </button>
       )}
     </div>
