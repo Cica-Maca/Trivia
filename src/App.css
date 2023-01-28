@@ -216,12 +216,10 @@ body {
 }
 
 .incorrect-answer {
-  color: white !important;
   background-color: rgb(176, 33, 76) !important;
 }
 
 .correct-answer {
-  color: white !important;
   background-color: rgb(33, 176, 93) !important;
 }
 
