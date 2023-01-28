@@ -204,21 +204,25 @@ body {
 }
 
 .answers-Rev > button {
-  background-color: white;
+  background-color: transparent;
   font-size: 1.5rem;
   border-radius: 50px;
-  color: rgb(33, 147, 176);
-  padding: 20px 50px 20px 50px;
+  color: white;
+  padding: 20px 20px;
   width: 200px;
   word-wrap: break-word;
+  border: 2px solid white;
+  font-family: Inter;
 }
 
 .incorrect-answer {
-  background-color: #ffc0c7 !important;
+  color: white !important;
+  background-color: rgb(176, 33, 76) !important;
 }
 
 .correct-answer {
-  background-color: #c0ffc3 !important;
+  color: white !important;
+  background-color: rgb(33, 176, 93) !important;
 }
 
 .show-button {

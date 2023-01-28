@@ -49,7 +49,6 @@ export default function Info({ getNewTrivia, userAnswers, questions }) {
           <div className='starting-page'>
             {StartOrEndElement}
             <button onClick={getNewTrivia}>Get trivia questions</button>
-            {toggleAnswers && revisedQuestionsElements}
             {userAnswers.length > 0 && (
               <button
                 className='show-button'
