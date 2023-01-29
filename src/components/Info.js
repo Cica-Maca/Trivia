@@ -34,16 +34,14 @@ export default function Info({ getNewTrivia, userAnswers, questions }) {
     <SwitchTransition>
       {toggleAnswers ? (
         <CSSTransition classNames='slideRight' key={1} timeout={500}>
-          <div className='info-page'>
-            <ul>
-              {revisedQuestionsElements}
-              <button
-                className='show-button'
-                onClick={() => setToggleAnswers((prevState) => !prevState)}
-              >
-                {toggleAnswers ? 'Hide Answers' : 'Show Answers'}
-              </button>
-            </ul>
+          <div className='info-page adjust-height'>
+            <ul className='info-page-answers'>{revisedQuestionsElements}</ul>
+            <button
+              className='show-button'
+              onClick={() => setToggleAnswers((prevState) => !prevState)}
+            >
+              {toggleAnswers ? 'Hide Answers' : 'Show Answers'}
+            </button>
           </div>
         </CSSTransition>
       ) : (

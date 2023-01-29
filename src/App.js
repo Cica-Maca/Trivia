@@ -14,7 +14,7 @@ function App() {
   const [gameState, setGameState] = useState(false);
 
   function getNewTrivia() {
-    fetch('https://opentdb.com/api.php?amount=5&type=multiple')
+    fetch('https://opentdb.com/api.php?amount=10&type=multiple')
       .then((response) => response.json())
       .then((data) => {
         const newData = data.results.map((question) => {
