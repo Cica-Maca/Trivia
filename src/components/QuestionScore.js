@@ -20,9 +20,9 @@ export default function QuestionScore({ question, userAnswers, index }) {
   });
 
   return (
-    <div className='question-Rev'>
+    <li className='question-Rev'>
       <h1>{question.question}</h1>
       <div className='answers-Rev'>{checkedAnswersElements}</div>
-    </div>
+    </li>
   );
 }
