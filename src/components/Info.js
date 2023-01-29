@@ -3,7 +3,13 @@ import QuestionScore from './QuestionScore';
 
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
-export default function Info({ getNewTrivia, userAnswers, questions }) {
+export default function Info({
+  getNewTrivia,
+  userAnswers,
+  questions,
+  category,
+  setCategory,
+}) {
   const [toggleAnswers, setToggleAnswers] = useState(false);
 
   const revisedQuestionsElements = questions.map((question, index) => {
@@ -49,15 +55,10 @@ export default function Info({ getNewTrivia, userAnswers, questions }) {
           <div className='info-page'>
             {StartOrEndElement}
             <button onClick={getNewTrivia}>Get trivia questions</button>
-            {userAnswers.length > 0 && (
-              <button
-                className='show-button'
-                onClick={() => setToggleAnswers((prevState) => !prevState)}
-              >
-                {toggleAnswers ? 'Hide Answers' : 'Show Answers'}
-              </button>
-            )}
-            <select>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
               <option value='any'>Any Category</option>
               <option value='9'>General Knowledge</option>
               <option value='10'>Books</option>
@@ -84,6 +85,14 @@ export default function Info({ getNewTrivia, userAnswers, questions }) {
               <option value='31'>Japanese Anime &amp; Manga</option>
               <option value='32'>Cartoon &amp; Animations</option>
             </select>
+            {userAnswers.length > 0 && (
+              <button
+                className='show-button'
+                onClick={() => setToggleAnswers((prevState) => !prevState)}
+              >
+                {toggleAnswers ? 'Hide Answers' : 'Show Answers'}
+              </button>
+            )}
           </div>
         </CSSTransition>
       )}

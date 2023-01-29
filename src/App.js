@@ -12,9 +12,14 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [userAnswers, setUserAnswers] = useState([]);
   const [gameState, setGameState] = useState(false);
+  const [category, setCategory] = useState('');
 
   function getNewTrivia() {
-    fetch('https://opentdb.com/api.php?amount=5&type=multiple')
+    fetch(
+      `https://opentdb.com/api.php?amount=5&type=multiple${
+        category ? `&category=${category}` : ''
+      }`
+    )
       .then((response) => response.json())
       .then((data) => {
         const newData = data.results.map((question) => {
@@ -62,6 +67,8 @@ function App() {
               getNewTrivia={getNewTrivia}
               userAnswers={userAnswers}
               questions={trivia}
+              category={category}
+              setCategory={setCategory}
             />
           </CSSTransition>
         ) : (
