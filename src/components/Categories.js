@@ -1,7 +1,7 @@
 export default function Categories({ category, setCategory }) {
   return (
     <select value={category} onChange={(e) => setCategory(e.target.value)}>
-      <option value='any'>Any Category</option>
+      <option value=''>Any Category</option>
       <option value='9'>General Knowledge</option>
       <option value='10'>Books</option>
       <option value='11'>Film</option>
